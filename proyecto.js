@@ -55,66 +55,76 @@ function contratacion(){
 
 function presupuesto() {
     
-    let servicio = prompt("Opciones: \n 1. Basico \n 2. Semicompleto \n 3. Completo")
-    
-    let sbasico = 5000
-    
-    if(servicio == "Basico"){
-        
-        alert("Esta opcion solo incluye manejo de obra")
-        
-        let sb = confirm ("desea aceptar")
-        //sb = servicio basico
-       
-        if(sb = true){
-             alert("Su Monto por este servicio es: " + sbasico)
-        }else{
-            presupuesto()
-        }
-       
-    }else if (servicio == "Semicompleto"){
 
-        
+    let espacio = prompt("Opcion \n 1. Pileta \n 2. Casa") 
 
-        alert("Esta opcion contiene: \n 1.contratacion de baño quimico \n 2.contratacion de conteiner \n mas el manejo de obra")
-        semicompleto()
-        alert("Tu monto por esta cantidad es de: $" + resultado)
-        
-        let cs = confirm ("Desea aceptar")
-        //cs = contrato semicompleto
+    const MEDIDAS = []
+
+    if (espacio == "1"){
+
+            let altura = parseFloat(prompt("Que profundida?"))
+    
+            let largo = parseFloat(prompt("Que largo?"))
+    
+            let ancho = parseFloat(prompt("Que ancho?"))
+    
+            let m3 = altura * largo * ancho
+            
+            let insumo = 50000
+            
+            let resultado = m3 * 30000 + insumo
+            MEDIDAS.push(resultado)
+
+            let agua = m3 * 1000
+            MEDIDAS.push(agua)
   
-        if(cs = true){      
-            alert("Gracias por tu contratacion")
-        }else{
-            presupuesto()
-        }
+            console.log(MEDIDAS)
+            alert("$" + resultado)
+            alert("Tu pileta tiene una capacidad de : " + agua + " litros")
+            
+    
+        }else if (espacio == "2"){
+            
+            let casa = prompt("elige el modelo \n 1. monoambiente \n 2. Indica cuanto ambiente quieres")
+            
+            if (casa == "1"){
+                
+                alert("El monoambiente solo contiene una habitacion, un baño y cocina")
 
-    }else if (servicio == "Completo"){
-        
-        alert("Esta opcion es llave en mano nosotros nos encargamos de la contrataciones")
-        
-        let sc = confirm ("Desea confirmar")
-        //sc = servicio completo
-        
-        if(sc = true){
-            alert("Se le informara atravez de un presuspuesto todo lo solicitado")
+
+            }else if(casa == "2"){
+
+                const sector =  []
+
+                let habitacion = parseInt(prompt("Indica cuantas habitaciones: "))
+                sector.push(habitacion)   
+                
+                let baños = parseInt(prompt("Indica cuantos baños: "))
+                sector.push(baños)
+
+                let resto = prompt("Indica que otros espacio quiere ")
+                sector.push(resto)
+
+
+                console.log(sector)
+
+                alert(`Usted indico ${sector} `)
+
+                let cp = confirm ("Desea aceptar")
+                //cs = casa personalizada
+          
+                if(cp = true){      
+                    alert("Gracias, a la brevedad nos estaremos comunicando con ustedes")
+                }else{
+                    alert("No se a confirmado la indicaciones")      
+            }
+
         }else{
-            presupuesto()
+            alert("No completo los espacio requerido")
         }
-        
+       
     }else{
-        alert("No a elegido ninguna opcion")
- }
-}
-
-function semicompleto(){
-    let cantidad = parseInt(prompt("Elige la cantidad"))
-    let baño = 2000
-    let conteiner = 3500
-    let ganancias = 1.5
-
-    for (let i = 1 ; i <= cantidad; i++) {
-      resultado = ((baño + conteiner) * ganancias ) * cantidad
+        alert("No eligio ninguna opcion")
     }
-    return resultado 
+    
 }
