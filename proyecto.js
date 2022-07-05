@@ -96,19 +96,68 @@ function presupuesto() {
 
                 const sector =  []
 
-                let habitacion = parseInt(prompt("Indica cuantas habitaciones: "))
-                sector.push(habitacion)   
-                
-                let baños = parseInt(prompt("Indica cuantos baños: "))
-                sector.push(baños)
+                const espacio = [
+                    {lugar: "Habitacion", precio: 35000},
+                    {lugar: "Baño", precio: 50000},
+                    {lugar: "Cocina", precio: 40000},
+                    {lugar: "Living", precio: 25000},
+                    {lugar: "Quincho", precio: 100000},
+                    {lugar: "Cochera", precio: 20000},
+                    {lugar: "Sala de juego", precio: 15000},
+                ]
 
-                let resto = prompt("Indica que otros espacio quiere ")
-                sector.push(resto)
+                const habit = espacio.map (dato => dato.precio);
+
+                const hogar = espacio.map (resto => resto.lugar)
+        
+
+                function calculos (){
+                    
+                let habitacion = parseInt(prompt(`Indique cuantas  ${hogar[0]}: `))
+
+                let baños = parseInt(prompt(`Indique cuantas  ${hogar[1]}: `))
+               
+                let cocina = parseInt(prompt(`Indique cuantas  ${hogar[2]}: `))
+               
+                let living = parseInt(prompt(`Indique cuantas  ${hogar[3]}: `))
+               
+                let quincho = parseInt(prompt(`Indique cuantas  ${hogar[4]}: `))
+               
+                let cochera = parseInt(prompt(`Indique cuantas  ${hogar[5]}: `))
+              
+                let saladejuego = parseInt(prompt(`Indique cuantas  ${hogar[6]}: `))
+                
+                // let resto = prompt("Indica que otros espacio quiere ")
+                
+
+                let cH = habitacion * habit[0]
+                
+                let cB = baños * habit[1]
+
+                let cC = cocina * habit[2]
+
+                let cL = living * habit[3]
+               
+                let cQ = quincho * habit[4]
+                
+                let cCH = cochera * habit[5]
+               
+                let cS = saladejuego * habit[6]
+               
+
+
+                let total = cB + cH + cC + cCH + cL + cS + cQ
+                sector.push(total)
+                }
+       
+                
+
 
 
                 console.log(sector)
+                calculos()
 
-                alert(`Usted indico ${sector} `)
+                alert(`Usted indico $${sector} `)
 
                 let cp = confirm ("Desea aceptar")
                 //cs = casa personalizada
@@ -128,3 +177,4 @@ function presupuesto() {
     }
     
 }
+
