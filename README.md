@@ -192,4 +192,57 @@ cada uno de ello y dale un valor para que luego les pueda tira un resultado al c
     }
     
 }
+Realize el agragado de DOM
+En la que hise un acordeon donde te deja la informacion de las acciones anteriores
+
+let navegador = document.getElementById("menu")
+contratacion()
+presupuesto()
+
+let presu = document.getElementById("presu")
+
+
+
+let navPrincipal = `<div class="accordion-item">
+<h2 class="accordion-header" id="headingOne">
+  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne ">
+    Contratacion
+  </button>
+</h2>
+<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+    <strong >${contrata} </strong> 
+  </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingTwo">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo ">
+    Presupuesto
+  </button>
+</h2>
+<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+    <strong>${dato}</strong>
+  </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingThree">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    Contacto
+  </button>
+</h2>
+<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+    <strong><p>Contactanos al +54 3547 9642</p>
+    <p>email: aswefewq@hotmail.com</p></strong> 
+  </div>
+</div>
+</div> `
+
+navegador.innerHTML = navPrincipal 
+
+console.log(navegador.innerHTML)
+
 
