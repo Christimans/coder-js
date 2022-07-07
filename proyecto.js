@@ -68,9 +68,9 @@ function contratacion(){
     let opcion = prompt("Opciones: \n 1. llave en mano \n 2. Solo mano de obra")
 
     if (opcion == "1"){
-        contrata = "Esta opcion incluye todo los servicios"
+        contrata = "ELIGIO LLAVE EN MANO: Esta opcion incluye todo los servicios"
     }else if (opcion == "2") {
-        contrata = "Esta opcion solo incluye mano de obra. Él resto de los servicios puede ser opcional"
+        contrata = "ELIGIO SOLO MANO DE OBRA: Esta opcion solo incluye mano de obra. Él resto de los servicios puede ser opcional"
     }else {
         contrata = "no selecionaste ninguna"
     }
