@@ -1,6 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(240, 150, 41);
+}
+
 h1{
     display: flex;
     justify-content: center;
     background-color: brown;
     color: beige;
+}
+
+.card{
+    margin: 1em;
+}
+div{
+    padding: 2em;
 }

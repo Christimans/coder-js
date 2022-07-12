@@ -10,72 +10,46 @@ if(nombre = "Bienvenido"){
 }
 console.log(Bienvenido.innerText)
 
-let navegador = document.getElementById("menu")
-contratacion()
-presupuesto()
+const primero = document.getElementById("contratos")
 
-let presu = document.getElementById("presu")
+primero.addEventListener ("click",() => {contratacion()}) 
 
+const segundo = document.getElementById("cotizador")
 
+segundo.addEventListener ("click", presupuesto)
 
-let navPrincipal = `<div class="accordion-item">
-<h2 class="accordion-header" id="headingOne">
-  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne ">
-    Contratacion
-  </button>
-</h2>
-<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-  <div class="accordion-body">
-    <strong >${contrata} </strong> 
-  </div>
-</div>
-</div>
-<div class="accordion-item">
-<h2 class="accordion-header" id="headingTwo">
-  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo ">
-    Presupuesto
-  </button>
-</h2>
-<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-  <div class="accordion-body">
-    <strong>${dato}</strong>
-  </div>
-</div>
-</div>
-<div class="accordion-item">
-<h2 class="accordion-header" id="headingThree">
-  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-    Contacto
-  </button>
-</h2>
-<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-  <div class="accordion-body">
-    <strong><p>Contactanos al +54 3547 9642</p>
-    <p>email: aswefewq@hotmail.com</p></strong> 
-  </div>
-</div>
-</div> `
+const tercero = document.getElementById("nosotros")
 
-navegador.innerHTML = navPrincipal 
-
-console.log(navegador.innerHTML)
+tercero.addEventListener ("click", contac)
 
 
 
-
-
-function contratacion(){
-    let opcion = prompt("Opciones: \n 1. llave en mano \n 2. Solo mano de obra")
-
-    if (opcion == "1"){
-        contrata = "ELIGIO LLAVE EN MANO: Esta opcion incluye todo los servicios"
-    }else if (opcion == "2") {
-        contrata = "ELIGIO SOLO MANO DE OBRA: Esta opcion solo incluye mano de obra. Él resto de los servicios puede ser opcional"
-    }else {
-        contrata = "no selecionaste ninguna"
-    }
+function contac (telefono, email){
+  telefono = "Contactanos al +54 351 0428646"
+  email = "E-mail: empresaconstructora@gmail.com"
+  alert(`${telefono} o al ${email} `)
 }
+let contrata
+function contratacion(contrata){
 
+  let opcion = prompt("Opciones: \n 1. llave en mano \n 2. Solo mano de obra")
+
+  if (opcion == "1"){
+    
+      contrata = "ELIGIO LLAVE EN MANO: Esta opcion incluye todo los servicios"
+      
+  }else if (opcion == "2") {
+      contrata = "ELIGIO SOLO MANO DE OBRA: Esta opcion solo incluye mano de obra. Él resto de los servicios puede ser opcional"
+  }else {
+      contrata = "no selecionaste ninguna"
+     
+  }
+  alert(contrata)
+}
+console.log(contrata)
+
+
+let dato
 
 function presupuesto() {
     
@@ -204,7 +178,65 @@ function presupuesto() {
     }else{
         alert("No eligio ninguna opcion")
     }
-    
+    alert(dato)
 }
+
+
+
+
+
+
+let navegador = document.getElementById("base")
+// contratacion()
+// presupuesto()
+
+let presu = document.getElementById("presu")
+
+
+
+let navPrincipal = `<div class="accordion-item">
+<h2 class="accordion-header" id="headingOne">
+  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne ">
+    Contratacion
+  </button>
+</h2>
+<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+  <div class="accordion-body c1">
+    <strong >${contrata} </strong> 
+  </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingTwo">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo ">
+    Presupuesto
+  </button>
+</h2>
+<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+    <strong>${dato}</strong>
+  </div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header" id="headingThree">
+  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    Contacto
+  </button>
+</h2>
+<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+    <strong><p>Contactanos al +54 3547 9642</p>
+    <p>email: aswefewq@hotmail.com</p></strong> 
+  </div>
+</div>
+</div> `
+
+navegador.innerHTML = navPrincipal 
+
+console.log(navegador.innerHTML)
+
+
+
 
 
