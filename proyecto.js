@@ -33,7 +33,7 @@ function menudecard() {
        <div class="card h-100" >
          <img src="imagen/contrato.png" class="card-img-top" alt="...">
          <div class="card-body">
-           <h5 class="card-title">Contratacion</h5>
+           <h4 class="card-title">Contratacion</h4>
            <p class="card-text">Aqui te damo la opcion de elegir la forma en la que quiere que nosotro nos encargemos de tu obra</p>
          </div>
          <div class="card-footer">
@@ -46,7 +46,7 @@ function menudecard() {
        <div class="card h-100">
          <img src="imagen/presupuesto-maestro-empresas.jpg" class="card-img-top" alt="...">
          <div class="card-body">
-           <h5 class="card-title">Presupuesto</h5>
+           <h4 class="card-title">Presupuesto</h4>
            <p class="card-text">Arma tu propio presupuesto atravez de nuestra web</p>
          </div>
          <div class="card-footer">
@@ -58,7 +58,7 @@ function menudecard() {
        <div class="card h-100">
          <img src="imagen/contacto.png" class="card-img-top" alt="...">
          <div class="card-body">
-           <h5 class="card-title">Contactos</h5>
+           <h4 class="card-title">Contactos</h4>
            <p class="card-text">Contactate con nosotros si tenes dudas</p>
          </div>
          <div class="card-footer">
@@ -79,7 +79,7 @@ function cardUno() {
     <div class="col-sm-6">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">Con llave en mano</h5>
+          <h4 class="card-title">Con llave en mano</h4>
           <p class="card-text">Este contrato te ofrecera manejo de obra total, es decir:</p>
           <p class="card-text">- Incluye contratacion de material</p>
           <p class="card-text">- Incluye contenedores</p>
@@ -92,7 +92,7 @@ function cardUno() {
     <div class="col-sm-6">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">Solo mano de obra</h5>
+          <h4 class="card-title">Solo mano de obra</h4>
           <p class="card-text">Este contrato solo te brindara la mano de obra</p>
           <p class="card-text">- No incluye compra de materiales, ni fletes</p>
           <p class="card-text">- No incluye contratacion de contenedores</p>
@@ -129,10 +129,11 @@ function eleccion (llavemano, manoobra) {
       <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
     </symbol>
   </svg>
-    <div class="alert alert-success d-flex align-items-center" role="alert">
+    <div class="alert alert-success d-flex align-items-center row" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-        <div>
-          Gracias por contar con nosotros!! Eligio Llave en mano
+        <div class="row-sm-12">
+        <h5> Gracias por contar con nosotros!!</h5>
+        <h6> Eligio Llave en mano</h6>
         </div>
       </div>
       <button onclick="regreso()"  type="click" class="btn btn-outline-light">Aceptar </button>
@@ -151,10 +152,11 @@ function eleccion (llavemano, manoobra) {
           <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </symbol>
       </svg>
-        <div class="alert alert-success d-flex align-items-center" role="alert">
+        <div class="alert alert-success d-flex align-items-center row" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div>
-              Gracias por contar con nosotros!! Eligio Mano de obra
+            <div class="row-sm-12">
+            <h5> Gracias por contar con nosotros!!</h5>
+            <h6> Eligio Mano de obra </h6>
             </div>
           </div>
           <button onclick="regreso()"  type="click" class="btn btn-outline-light">Aceptar </button>
@@ -173,7 +175,7 @@ function general () {
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Pileta</h5>
+        <h4 class="card-title">Pileta</h4>
         <p class="card-text">Aqui elige tu dimesiones de la pileta a cotizar</p>
         <button onclick="pileta()" id="agua" type="button" class="btn btn-outline-light">Cotizar</button>
       </div>
@@ -182,7 +184,7 @@ function general () {
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Casa</h5>
+        <h4 class="card-title">Casa</h4>
         <p class="card-text">Aqui elige tu espacio a cotizar</p>
         <button onclick="casa()" id="espacios" type="button" class="btn btn-outline-light">Cotizar</button>
       </div>
@@ -239,18 +241,27 @@ function general () {
         let agua = m3 * 1000;
         MEDIDAS.push(agua);
         
-        let dato = `<div class="row">
-        <div class="col-sm-12">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Pileta</h5>
-              <p class="card-text">Tu dimensiones son ${dimension1.value} de largo X ${dimension2.value} de ancho X ${profundidad.value} de profundidad</p>
-              <p class="card-text">Tu pileta  tendra un caudal de ${MEDIDAS[1]} litros aproximadamente</p>
-              <button onclick="regreso()"  type="button" class="btn btn-outline-light">Aceptar</button>
-              <button onclick="pileta()"  type="button" class="btn btn-outline-light">Volver a editar</button>
+        let dato = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>
+        <div class="alert alert-success d-flex align-items-center row" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div class="row-sm-12">
+            <h5> Gracias por contar con nosotros!!</h5>
+            <h6> Tu dimensiones son ${dimension1.value} de largo X ${dimension2.value} de ancho X ${profundidad.value} de profundidad</h6> 
+            <h6> Tu pileta  tendra un caudal de ${MEDIDAS[1]} litros aproximadamente</h6>
             </div>
           </div>
-        </div>`;
+          <button onclick="regreso()"  type="button" class="btn btn-outline-light">Aceptar</button>
+          <button onclick="pileta()"  type="button" class="btn btn-outline-light">Volver a editar</button>`;
         console.log(dato) 
         
         main.innerHTML = dato
@@ -282,7 +293,7 @@ let espacie = [
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Monoambiente</h5>
+            <h4 class="card-title">Monoambiente</h4>
             <p class="card-text">El monoambiente solo contiene: - una habitacion - un baño - cocina</p>
             <button onclick="regreso()" type="button" class="btn btn-outline-light">Enviar</button>
           </div>
@@ -292,7 +303,7 @@ let espacie = [
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Arma tu espacios</h5>
+            <h4 class="card-title">Arma tu espacios</h4>
           <div class="mb-3">
             <label for="bedroom" class="form-label">Elige la cantidad de ${hogar[0]}</label>
             <input type="number" class="form-control" id="bedroom" placeholder="">
@@ -387,17 +398,26 @@ function dimensioncasa (){
           sector.push(total);
           console.log(total)
   
-        let datos = `<div class="row">
-        <div class="col-sm-12">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Pileta</h5>
-              <p class="card-text">Tu Casa contiene:  ${sector[0]} habitaciones  ${sector[1]} baños ${sector[2]} cocina ${sector[3]} living  ${sector[4]} quincho  ${sector[5]} cochera  ${sector[6]} sala de juego. </p>
-              <button onclick="regreso()"  type="button" class="btn btn-outline-light">Aceptar</button>
-              <button onclick="dimensioncasa()"  type="button" class="btn btn-outline-light">Volver a editar</button>
+        let datos = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>
+        <div class="alert alert-success d-flex align-items-center row" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div class="row-sm-12">
+            <h5> Gracias por contar con nosotros!!</h5>
+            <h6> Tu Casa contiene:  ${sector[0]} habitaciones  ${sector[1]} baños ${sector[2]} cocina ${sector[3]} living  ${sector[4]} quincho  ${sector[5]} cochera  ${sector[6]} sala de juego.</h6>
             </div>
           </div>
-        </div>`;
+          <button onclick="regreso()"  type="button" class="btn btn-outline-light">Aceptar</button>
+          <button onclick="dimensioncasa()"  type="button" class="btn btn-outline-light">Volver a editar</button>`;
         
         main.innerHTML = datos
 
