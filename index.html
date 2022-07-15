@@ -7,82 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
     <title>Projecto Js</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+   
 </head>
   
 
 <body>
+  
+  <div id="header" class="contenido">
+    <h1>BIENVENIDOS A EMPRESA CONSTRUCTORA </h1>
+    <form class="row g-3 estilo">
+      <h2>COMPLETE LOS SIGUENTES DATOS</h2>
+      <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="validationnombre" value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">apellido</label>
+      <input type="text" class="form-control" id="validationapellido" value="" required>
+    </div>
+      
+      <div class="buttom">
+        <button id="cardmain" class="btn btn-primary" type="click" onclick="">Enviar</button>
+      </div>
+    </form>    
+  </div>    
+  </div>
+
+  <div id="main" class="contenedordecard"></div>
  
-  <h1 id="bienvenido" ></h1>
-  
-  
-<div id="menu" class="row">
-  <div class="col-sm-4">
-    <div class="card h-100" >
-      <img src="imagen/contrato.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Contratacion</h5>
-        <p class="card-text">Aqui te damo la opcion de elegir la forma en la que quiere que nosotro nos encargemos de tu obra</p>
-      </div>
-      <div class="card-footer">
-        <button id="contratos" type="button" class="btn btn-info">Elige tu contrato</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card h-100">
-      <img src="imagen/presupuesto-maestro-empresas.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Presupuesto</h5>
-        <p class="card-text">Arma tu propio presupuesto atravez de nuestra web</p>
-      </div>
-      <div class="card-footer">
-        <button id="cotizador" type="button" class="btn btn-info">Cotizar</button>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card h-100">
-      <img src="imagen/contacto.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Contactos</h5>
-        <p class="card-text">Contactate con nosotros si tenes dudas</p>
-      </div>
-      <div class="card-footer">
-        <button id="nosotros" type="button" class="btn btn-info">Contactanos</button>
-      </div>
-    </div>
-  </div>
-</div>
-  
-  
-  
-
-
-<div class="accordion"  id="base"></div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="proyecto.js"></script>
+    
+  <script defer src="proyecto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
+
 </html>
