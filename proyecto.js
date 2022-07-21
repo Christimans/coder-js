@@ -1,28 +1,77 @@
-// Boton para iniciar menu de card
-
-let navegador = document.getElementById("cardmain")
-
-navegador.addEventListener("click", menudecard)
-
-
-
 
 // Funcion de bienvenida Header 
+let ingreso = document.getElementById('header')
 
-function menudecard() {
-    let nombre = document.getElementById("validationnombre");
-    let apellido = document.getElementById("validationapellido");
+let validaciones = document.querySelectorAll('#header input')
+
+// funcion de parametros en la que puede escribir solo letras con espacios y puede llevar acentos con un maximo de 20 caracteres
+const expresiones = {
+  nombre: /^[a-zA-ZÀ-ÿ\s]{1,20}$/,
+  apellido:  /^[a-zA-ZÀ-ÿ\s]{1,20}$/,
+}
+
+// Funcion de validacion de campos
+
+const validaciondeinput = {
+  nombre: false,
+  apellido: false
+}
+
+const validaciondeingreso = (e) => {
+  switch (e.target.name) {
+    case "nombre":
+      if (expresiones.nombre.test(e.target.value)){
+        document.getElementById('validationnombre').classList.remove('is-invalid');
+        document.getElementById('validationnombre').classList.add('is-valid');   
+        validaciondeinput['nombre'] = true;  
+      }else {
+        document.getElementById('validationnombre').classList.add('is-invalid');
+        document.getElementById('validationnombre').classList.remove('is-valid');
+      }
+    break;
+
+    case "apellido":
+      if (expresiones.apellido.test(e.target.value)){
+        document.getElementById('validationapellido').classList.remove('is-invalid');
+        document.getElementById('validationapellido').classList.add('is-valid');
+        validaciondeinput['apellido'] = true;        
+      }else {
+        document.getElementById('validationapellido').classList.add('is-invalid');
+        document.getElementById('validationapellido').classList.remove('is-valid');
+      }
+    break;
+  }
+}
+
+validaciones.forEach((input) => {
+  input.addEventListener('keyup', validaciondeingreso)
+  input.addEventListener('blur', validaciondeingreso)
+
   
-    header.innerHTML = `
-     <h1>Bienvenido ${nombre.value} ${apellido.value}</h1>
-    ` 
+});
+
+ingreso.addEventListener('click', () => {
+  
+  if (validaciondeinput.nombre && validaciondeinput.apellido) {
+   menudecard()
+   regreso()
+  }
+})
+
+function menudecard () {
+  let nombre = document.getElementById('validationnombre')
+  let apellido = document.getElementById('validationapellido')
+
+  header.innerHTML = `
+  <h1>BIENVENIDO ${nombre.value.toUpperCase()} ${apellido.value.toUpperCase()}</h1>` 
+  
 }
   
 // Funcion de Card Main
  
   let main = document.getElementById("main")
   
-  navegador.addEventListener("click", regreso)
+  // navegador.addEventListener("click", regreso)
 
   
   function regreso (){
@@ -74,8 +123,9 @@ function menudecard() {
 
 function cardUno() {
     
-    let datos = `<h2> Elige el tipo de contratacion que quieres con nosotros </h2>
-      <div class="row">
+    let datos = `
+      <div id="card1" class="row">
+      <h2> Elige el tipo de contratacion que quieres con nosotros </h2>
     <div class="col-sm-6">
       <div class="card h-100">
         <div class="card-body">
@@ -85,8 +135,8 @@ function cardUno() {
           <p class="card-text">- Incluye contenedores</p>
           <p class="card-text">- Incluye baño quimico (opcional)</p>
           <p class="card-text">- Incluye direccion tecnica</p>
-          <button onclick="eleccion()" type="button" class="btn btn-outline-light">Contratar</button>
         </div>
+        <button onclick="eleccion1()" id="llave" type="click" class="btn btn-outline-dark" name="llave">Contratar</button>
       </div>
     </div>
     <div class="col-sm-6">
@@ -97,73 +147,40 @@ function cardUno() {
           <p class="card-text">- No incluye compra de materiales, ni fletes</p>
           <p class="card-text">- No incluye contratacion de contenedores</p>
           <p class="card-text">- No incluye contratacion de baño quimico</p>
-          <button onclick="eleccion()" type="button" class="btn btn-outline-light">Contratar</button>
         </div>
+        <button onclick="eleccion2()" id="mano" type="click" class="btn btn-outline-dark" name="mano">Contratar</button>
       </div>
     </div>
+    
   </div>
-  <button onclick="regreso()"  type="button" class="btn btn-outline-light"> Volver a menu</button>`
+  <button onclick="regreso()"  type="button" class="btn btn-dark b2"> Volver a menu</button>`
     main.innerHTML = datos;
 }
 
 // Funcion para las opciones de la primera card "CONTRATACION"
 
 // card uno "CON LLAVE EN MANO"
+function eleccion1 () {
+  let llave = document.getElementById('llave')
+  llave.addEventListener('click', () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Gracias por contar con nosotros!!',
+      text: 'Eligio Llave en mano'
+    })
+  } )
 
-let llavemano = document.getElementById('llavemano')
-let manoobra = document.getElementById('manoobra')
+  }
+function eleccion2 () {
+  let mano = document.getElementById('mano')
 
-
-function eleccion (llavemano, manoobra) {
-    let elecciones
-
-     if (elecciones === llavemano){
-    let contratacionuno = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-    </symbol>
-    <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-    </symbol>
-    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-    </symbol>
-  </svg>
-    <div class="alert alert-success d-flex align-items-center row" role="alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-        <div class="row-sm-12">
-        <h5> Gracias por contar con nosotros!!</h5>
-        <h6> Eligio Llave en mano</h6>
-        </div>
-      </div>
-      <button onclick="regreso()"  type="click" class="btn btn-outline-light">Aceptar </button>
-      <button onclick="cardUno()"  type="click" class="btn btn-outline-light">Elegir otra opcion</button>`
-
-    main.innerHTML = contratacionuno 
-     }else if (elecciones === manoobra){
-        let contrataciondos = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-        </symbol>
-        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-        </symbol>
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
-      </svg>
-        <div class="alert alert-success d-flex align-items-center row" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div class="row-sm-12">
-            <h5> Gracias por contar con nosotros!!</h5>
-            <h6> Eligio Mano de obra </h6>
-            </div>
-          </div>
-          <button onclick="regreso()"  type="click" class="btn btn-outline-light">Aceptar </button>
-          <button onclick="cardUno()"  type="click" class="btn btn-outline-light">Elegir otra opcion</button>`
-          main.innerHTML = contrataciondos
-     }
-      
+  mano.addEventListener('click', () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Gracias por contar con nosotros!!',
+      text: `Eligio Mano de obra`,
+    })
+  })
 }
 
 // Esta funcion manejara la segunda tarjeta llamada presupuesto en la que contiene dos opciones: pileta y casa
@@ -214,7 +231,9 @@ function general () {
     <label for="profundidad" class="form-label">Profundidad de la pileta</label>
     <input type="number" class="form-control" id="profundidad" placeholder="Escribe la profundidad">
   </div>
-  <button id="resultadosmedidas" type="submit" class="btn btn-outline-light">Enviar</button>`;
+  <button id="resultadosmedidas" type="submit" class="btn btn-outline-light">Enviar</button>
+  <button onclick="regreso()"  type="button" class="btn btn-outline-light">Volver a menu</button>`;
+  
   
     main.innerHTML = datospileta;
 
@@ -240,31 +259,23 @@ function general () {
         
         let agua = m3 * 1000;
         MEDIDAS.push(agua);
-        
-        let dato = `<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-        </symbol>
-        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-        </symbol>
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
-      </svg>
-        <div class="alert alert-success d-flex align-items-center row" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div class="row-sm-12">
-            <h5> Gracias por contar con nosotros!!</h5>
-            <h6> Tu dimensiones son ${dimension1.value} de largo X ${dimension2.value} de ancho X ${profundidad.value} de profundidad</h6> 
-            <h6> Tu pileta  tendra un caudal de ${MEDIDAS[1]} litros aproximadamente</h6>
-            </div>
-          </div>
-          <button onclick="regreso()"  type="button" class="btn btn-outline-light">Aceptar</button>
-          <button onclick="pileta()"  type="button" class="btn btn-outline-light">Volver a editar</button>`;
-        console.log(dato) 
-        
-        main.innerHTML = dato
+
+        Swal.fire({
+         
+            title: 'Deseas confirmar las siguientes medida',
+            text: `Tu dimensiones son ${dimension1.value} de largo X ${dimension2.value} de ancho X ${profundidad.value} de profundidad`,
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar',
+            denyButtonText: `No continuar`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              Swal.fire('Gracias por contar con nosotros!!', `Tu dimensiones son ${dimension1.value} de largo X ${dimension2.value} de ancho X ${profundidad.value} de profundidad y tendra un caudal de ${MEDIDAS[1]} litros aproximadamente`,'', 'success')
+            } else if (result.isDenied) {
+              Swal.fire('No se confirmo ninguna medida', '', 'info')
+            }
+          })
         }
     
   }

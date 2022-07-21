@@ -21,22 +21,28 @@
   
   <div id="header" class="contenido">
     <h1>BIENVENIDOS A EMPRESA CONSTRUCTORA </h1>
-    <form class="row g-3 estilo">
+    <div class="row align-items-center estilo">
       <h2>COMPLETE LOS SIGUENTES DATOS</h2>
-      <div class="col-md-4">
-      <label for="validationDefault01" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="validationnombre" value="" required>
-    </div>
-    <div class="col-md-4">
-      <label for="validationDefault02" class="form-label">apellido</label>
-      <input type="text" class="form-control" id="validationapellido" value="" required>
-    </div>
+      <div class="row">
+        <div class="col-auto">
+          <input id="validationnombre" type="text" aria-label="Nombre" placeholder="Nombre" class="form-control" name="nombre" value="" required>
+          <div class="invalid-feedback">
+            El nombre es incorrecto. Solo puede contener letras
+          </div>
+        </div>
+
+        <div class="col-auto">
+          <input id="validationapellido" type="text" aria-label="Apellido" placeholder="Apellido" class="form-control" name="apellido" value="" required>
+          <div class="invalid-feedback">
+            El apellido es incorrecto. Solo puede contener letras
+          </div>
+        </div>
+      </div>
       
       <div class="buttom">
         <button id="cardmain" class="btn btn-primary" type="click" onclick="">Enviar</button>
       </div>
-    </form>    
-  </div>    
+    </div>    
   </div>
 
   <div id="main" class="contenedordecard"></div>
@@ -48,6 +54,7 @@
     
   <script defer src="proyecto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
 </html>
