@@ -187,14 +187,14 @@ function eleccion2 () {
   
 function general () {
   
-    let opcion = `<h2> Elige que quieres cotizar </h2>
+    let opcion = `<h2 class="h2t"> Elige que quieres cotizar </h2>
     <div class="row">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Pileta</h4>
         <p class="card-text">Aqui elige tu dimesiones de la pileta a cotizar</p>
-        <button onclick="pileta()" id="agua" type="button" class="btn btn-outline-light">Cotizar</button>
+        <button onclick="pileta()" id="agua" type="button" class="btn btn-outline-dark">Cotizar</button>
       </div>
     </div>
   </div>
@@ -203,12 +203,12 @@ function general () {
       <div class="card-body">
         <h4 class="card-title">Casa</h4>
         <p class="card-text">Aqui elige tu espacio a cotizar</p>
-        <button onclick="casa()" id="espacios" type="button" class="btn btn-outline-light">Cotizar</button>
+        <button onclick="casa()" id="espacios" type="button" class="btn btn-outline-dark">Cotizar</button>
       </div>
     </div>
   </div>
   </div> 
-  <button onclick="regreso()"  type="button" class="btn btn-outline-light"> Volver a menu</button>`
+  <button onclick="regreso()"  type="button" class="btn btn-outline-light bot1"> Volver a menu</button>`
   
   main.innerHTML = opcion
   
