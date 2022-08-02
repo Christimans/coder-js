@@ -1,3 +1,17 @@
+async function obtenerDatos (){
+  try {
+    let response = await fetch ("db.json")
+
+    let data = await response.json()
+  
+    console.log(data)
+    
+  } catch (error) {
+
+    console.log(error)
+    
+  }
+}
 
 // Funcion de bienvenida Header 
 let ingreso = document.getElementById('header')
@@ -356,6 +370,8 @@ let espacie = [
   }
   
   // funcion de calculos
+
+
   
 function dimensioncasa (){
         let bedroom = document.getElementById("bedroom");
@@ -462,4 +478,4 @@ function contact () {
 
 
 
-
+  obtenerDatos()
